@@ -1,7 +1,10 @@
-﻿namespace DefaultNamespace
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+[CreateAssetMenu(fileName = "ClickButtonConfig", menuName = "Configs/ClickButtonConfig")]
+public class ClickButtonConfig : ScriptableObject
 {
-    public class ClickButtonConfig
-    {
-        
-    }
+    public Sprite DefaultSprite;
+    public ColorBlock ButtonColors;
+    
 }
