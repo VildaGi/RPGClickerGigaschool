@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24469e82fc644bd946e63e38ac4f76e, type: 3}
   m_Name: ClickButtonConfig
   m_EditorClassIdentifier: 
-  DefaultSprite: {fileID: -3144726184568963112, guid: eb9b78c085ffd904d82892e1df9ff033, type: 3}
+  DefaultSprite: {fileID: 6965212599342224798, guid: 9ccbf4178477d3b42aa0cc9a644a7d19, type: 3}
   ButtonColors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}

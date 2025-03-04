@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6a1ad2eaf24bffbfb752d80e212b52, type: 3}
+  m_Name: MenuButtonConfig
+  m_EditorClassIdentifier: 
+  AttackDefaultSprite: {fileID: -8935139330842169121, guid: 9f95c8638db90bd4d8d3b3efa9c94175, type: 3}
+  AttackSelectedSprite: {fileID: 7738488109943849495, guid: fbc092a77ddd8d644b5f5dc916fb8e88, type: 3}
+  SkillsDefaultSprite: {fileID: -7606178721437449276, guid: 3ab0a454d3f524e4ea28c08d946a7c68, type: 3}
+  SkillsSelectedSprite: {fileID: -678613385896978371, guid: 00aef922d3a0d5047a9a42fb98515909, type: 3}
+  InventoryDefaultSprite: {fileID: 5493750819407907355, guid: f11078d5abd628e4dbd67094177c19ec, type: 3}
+  InventorySelectedSprite: {fileID: -4623048605600048076, guid: 193baa1177a62fb4aa204b82f0884820, type: 3}
+  ButtonColors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.6830188, g: 0.6830188, b: 0.6830188, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.9882353}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
