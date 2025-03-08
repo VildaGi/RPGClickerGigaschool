@@ -16,7 +16,6 @@ public class ClickButton : MonoBehaviour
         _button.colors = colorBlock;
     }
     
-    
     public void SubscribeOnClick(UnityAction action)
     {
         _button.onClick.AddListener(action);

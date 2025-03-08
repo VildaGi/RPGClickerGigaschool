@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [Serializable]
-public class EnemyData
+public struct EnemyData
 {
     public float Health;
     public Sprite Sprite;
