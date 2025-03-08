@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     private bool _isPlaying;
     public event UnityAction OnTimerEnd;
 
+    public bool IsPlaying => _isPlaying;
     public void Initialize(float maxTime)
     {
         _maxTime = maxTime;
@@ -38,7 +39,6 @@ public class Timer : MonoBehaviour
     {
         _isPlaying = true;
     }
-
     private void FixedUpdate()
     {
         if (!_isPlaying) return;

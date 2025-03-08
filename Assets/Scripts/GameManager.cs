@@ -22,19 +22,34 @@ public class GameManager : MonoBehaviour
         // после инитиализации делаем нужные подписки.
         _clickButtonManager.onClicked += () => _enemyManager.DamageCurrentEnemy(1f); 
             // из пустого метода мы должны выполнить метод и передать 1f.
-        
         _endLevelWindow.GetWinWindow().OnNextClicked += StartLevel;
         _endLevelWindow.GetLoseWindow().OnRestartClicked += StartLevel;
+        
+        _menuButtonManager.OnPauseGameClicked += PauseGame;
+        
         _enemyManager.OnLevelPassed += LevelPassed;
 
         StartLevel();
+    }
+
+    private void PauseGame()
+    {
+        if (_timer.IsPlaying)
+        {
+            _timer.Pause();
+            _clickButtonManager.DisableButtons();
+        }
+        else
+        {
+            _timer.Resume();
+            _clickButtonManager.EnableButtons();
+        }
     }
 
     private void LevelPassed()
     {
         _timer.Stop();
         _statistics.CheckBestTime(_timer.GetCurrentTime());
-        
         _endLevelWindow.ShowWinWindow();
     }
 

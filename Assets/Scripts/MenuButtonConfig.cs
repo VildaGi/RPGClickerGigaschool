@@ -13,5 +13,8 @@ public class MenuButtonConfig : ScriptableObject
     public Sprite InventoryDefaultSprite;
     public Sprite InventorySelectedSprite;
     
+    public Sprite PauseButtonSprite;
+    public Sprite ResumeButtonSprite;
+    
     public ColorBlock ButtonColors;
 }

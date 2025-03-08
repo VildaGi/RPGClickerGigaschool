@@ -18,6 +18,8 @@ MonoBehaviour:
   SkillsSelectedSprite: {fileID: -678613385896978371, guid: 00aef922d3a0d5047a9a42fb98515909, type: 3}
   InventoryDefaultSprite: {fileID: 5493750819407907355, guid: f11078d5abd628e4dbd67094177c19ec, type: 3}
   InventorySelectedSprite: {fileID: -4623048605600048076, guid: 193baa1177a62fb4aa204b82f0884820, type: 3}
+  PauseButtonSprite: {fileID: 5181654206020448988, guid: 30764b4719b43304cb1a9d96a797ebd6, type: 3}
+  ResumeButtonSprite: {fileID: -8038976213705442086, guid: 87007652a4bedc647b8a5484101c908e, type: 3}
   ButtonColors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
