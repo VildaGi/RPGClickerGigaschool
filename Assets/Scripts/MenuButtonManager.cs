@@ -14,17 +14,23 @@ public class MenuButtonManager : MonoBehaviour
     [SerializeField] private MenuButtonConfig _MenuButtonConfig;
     
     public event UnityAction OnPauseGameClicked;
+    public event UnityAction OnInventoryMenuClicked;
+    public event UnityAction OnSkillsMenuClicked;
+    public event UnityAction OnAttackMenuClicked;
     
     public void Initialize()
     {
         _attackMenuButton.Initialize(_MenuButtonConfig.AttackDefaultSprite, _MenuButtonConfig.ButtonColors, _MenuButtonConfig.AttackSelectedSprite);
         _attackMenuButton.SubscribeOnClick(AttackMenuClick);
+        _attackMenuButton.SubscribeOnClick(() => OnAttackMenuClicked?.Invoke());
         
         _skillsMenuButton.Initialize(_MenuButtonConfig.SkillsDefaultSprite, _MenuButtonConfig.ButtonColors, _MenuButtonConfig.SkillsSelectedSprite);
         _skillsMenuButton.SubscribeOnClick(SkillsMenuClick);
+        _skillsMenuButton.SubscribeOnClick(() => OnSkillsMenuClicked?.Invoke());
         
         _InventoryMenuButton.Initialize(_MenuButtonConfig.InventoryDefaultSprite, _MenuButtonConfig.ButtonColors, _MenuButtonConfig.InventorySelectedSprite);
         _InventoryMenuButton.SubscribeOnClick(InventoryMenuClick);
+        _InventoryMenuButton.SubscribeOnClick(() => OnInventoryMenuClicked?.Invoke());
         
         _StopGameButton.Initialize(_MenuButtonConfig.PauseButtonSprite, _MenuButtonConfig.ResumeButtonSprite, _MenuButtonConfig.ButtonColors);
         _StopGameButton.SubscribeOnClick(() => OnPauseGameClicked?.Invoke());
@@ -34,7 +40,6 @@ public class MenuButtonManager : MonoBehaviour
     {
         _menuImage.sprite = _InventoryMenuButton._selectedImage;
     }
-
     private void AttackMenuClick()
     {
         _menuImage.sprite = _attackMenuButton._selectedImage;

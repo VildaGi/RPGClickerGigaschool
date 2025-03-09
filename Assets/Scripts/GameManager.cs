@@ -6,17 +6,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ClickButtonManager _clickButtonManager;
     [SerializeField] private MenuButtonManager _menuButtonManager;
     [SerializeField] private EnemyManager _enemyManager;
-    //[SerializeField] private HealthBar _healthBar;
     [SerializeField] private EndLevelWindow _endLevelWindow;
     [SerializeField] private Timer _timer;
     [SerializeField] private Statistics _statistics;
+    [SerializeField] private InventoryMenuManager _inventoryMenuManager;
+    [SerializeField] private SkillsMenuManager _skillsMenuManager;
     
+    //[SerializeField] private HealthBar _healthBar;
     private void Awake()
     {
         _clickButtonManager.Initialize();
         _menuButtonManager.Initialize();
         _enemyManager.Initialize();
         _endLevelWindow.Initialize(_statistics);
+        _skillsMenuManager.Initialize();
+        _inventoryMenuManager.Initialize();
         
         
         // после инитиализации делаем нужные подписки.
@@ -26,6 +30,9 @@ public class GameManager : MonoBehaviour
         _endLevelWindow.GetLoseWindow().OnRestartClicked += StartLevel;
         
         _menuButtonManager.OnPauseGameClicked += PauseGame;
+        _menuButtonManager.OnAttackMenuClicked += OpenAttackMenu;
+        _menuButtonManager.OnSkillsMenuClicked += OpenSkillsMenu;
+        _menuButtonManager.OnInventoryMenuClicked += OpenInventoryMenu;
         
         _enemyManager.OnLevelPassed += LevelPassed;
 
@@ -60,5 +67,26 @@ public class GameManager : MonoBehaviour
         _statistics.Initialize(5f);
         _enemyManager.SpawnEnemy();
         _timer.OnTimerEnd += _endLevelWindow.ShowLoseWindow;
+    }
+
+    private void OpenInventoryMenu()
+    {
+        _clickButtonManager.gameObject.SetActive(false);
+        _inventoryMenuManager.gameObject.SetActive(true);
+        _skillsMenuManager.gameObject.SetActive(false);
+    }
+
+    private void OpenAttackMenu()
+    {
+        _clickButtonManager.gameObject.SetActive(true);
+        _inventoryMenuManager.gameObject.SetActive(false);
+        _skillsMenuManager.gameObject.SetActive(false);
+    }
+
+    private void OpenSkillsMenu()
+    {
+        _clickButtonManager.gameObject.SetActive(false);
+        _inventoryMenuManager.gameObject.SetActive(false);
+        _skillsMenuManager.gameObject.SetActive(true);
     }
 }
