@@ -1,0 +1,35 @@
+{
+  "buildFiles": [
+    "D:\\Dev\\GameDev\\Project\\My project\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\CMakeLists.txt",
+    "D:\\Dev\\GameDev\\Project\\My project\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\FramePacing\\CMakeLists.txt",
+    "D:\\Dev\\GameDev\\Project\\My project\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\src\\main\\cpp\\GameActivity\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\Dev\\GameDev\\Unity Editor\\6000.0.39f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "D:\\Dev\\GameDev\\Project\\My project\\.utmp\\RelWithDebInfo\\x6d4n40b\\x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\Dev\\GameDev\\Unity Editor\\6000.0.39f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "D:\\Dev\\GameDev\\Project\\My project\\.utmp\\RelWithDebInfo\\x6d4n40b\\x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "game::@d02bb112ea9f9c2ed29f": {
+      "artifactName": "game",
+      "abi": "x86_64",
+      "output": "D:\\Dev\\GameDev\\Project\\My project\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\x6d4n40b\\obj\\x86_64\\libgame.so",
+      "runtimeFiles": []
+    },
+    "swappywrapper::@7e25bd1f32ce224db4e9": {
+      "artifactName": "swappywrapper",
+      "abi": "x86_64",
+      "output": "D:\\Dev\\GameDev\\Project\\My project\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\x6d4n40b\\obj\\x86_64\\libswappywrapper.so",
+      "runtimeFiles": []
+    }
+  }
+}

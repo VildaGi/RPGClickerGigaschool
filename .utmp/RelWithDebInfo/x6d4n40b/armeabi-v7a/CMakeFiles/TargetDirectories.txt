@@ -1,0 +1,8 @@
+D:/Dev/GameDev/Project/My project/.utmp/RelWithDebInfo/x6d4n40b/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Dev/GameDev/Project/My project/.utmp/RelWithDebInfo/x6d4n40b/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+D:/Dev/GameDev/Project/My project/.utmp/RelWithDebInfo/x6d4n40b/armeabi-v7a/GameActivity/CMakeFiles/game.dir
+D:/Dev/GameDev/Project/My project/.utmp/RelWithDebInfo/x6d4n40b/armeabi-v7a/GameActivity/CMakeFiles/edit_cache.dir
+D:/Dev/GameDev/Project/My project/.utmp/RelWithDebInfo/x6d4n40b/armeabi-v7a/GameActivity/CMakeFiles/rebuild_cache.dir
+D:/Dev/GameDev/Project/My project/.utmp/RelWithDebInfo/x6d4n40b/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+D:/Dev/GameDev/Project/My project/.utmp/RelWithDebInfo/x6d4n40b/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+D:/Dev/GameDev/Project/My project/.utmp/RelWithDebInfo/x6d4n40b/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
