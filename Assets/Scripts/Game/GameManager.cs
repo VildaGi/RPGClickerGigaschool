@@ -1,7 +1,8 @@
+using SceneManagement;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour
+
+public class GameManager : EntryPoint
 {
     [SerializeField] private ClickButtonManager _clickButtonManager;
     [SerializeField] private MenuButtonManager _menuButtonManager;
@@ -13,7 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SkillsMenuManager _skillsMenuManager;
     
     //[SerializeField] private HealthBar _healthBar;
-    private void Awake()
+    private const string SCENE_LOADER_TAG = "SceneLoader";
+    
+    public override void Run(SceneEnterParams enterParams)
     {
         _clickButtonManager.Initialize();
         _menuButtonManager.Initialize();
@@ -25,9 +28,9 @@ public class GameManager : MonoBehaviour
         
         // после инитиализации делаем нужные подписки.
         _clickButtonManager.onClicked += () => _enemyManager.DamageCurrentEnemy(1f); 
-            // из пустого метода мы должны выполнить метод и передать 1f.
+        // из пустого метода мы должны выполнить метод и передать 1f.
         _endLevelWindow.GetWinWindow().OnNextClicked += StartLevel;
-        _endLevelWindow.GetLoseWindow().OnRestartClicked += StartLevel;
+        _endLevelWindow.GetLoseWindow().OnRestartClicked += RestartLevel;
         
         _menuButtonManager.OnPauseGameClicked += PauseGame;
         _menuButtonManager.OnAttackMenuClicked += OpenAttackMenu;
@@ -37,6 +40,12 @@ public class GameManager : MonoBehaviour
         _enemyManager.OnLevelPassed += LevelPassed;
 
         StartLevel();
+    }
+
+    private void RestartLevel()
+    {
+        var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+        sceneLoader.LoadGameplayScene();
     }
 
     private void PauseGame()
@@ -89,4 +98,6 @@ public class GameManager : MonoBehaviour
         _inventoryMenuManager.gameObject.SetActive(false);
         _skillsMenuManager.gameObject.SetActive(true);
     }
+
+    
 }
