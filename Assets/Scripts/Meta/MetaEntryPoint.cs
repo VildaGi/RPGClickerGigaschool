@@ -1,4 +1,5 @@
-﻿using SceneManagement;
+﻿using Meta.Locations;
+using SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,16 +7,16 @@ namespace Meta
 {
     public class MetaEntryPoint : EntryPoint
     {
-        [SerializeField] private Button _startLevelButton;
+        [SerializeField] private LocationManager _locationManager;
         
         private const string SCENE_LOADER_TAG = "SceneLoader";
         
         public override void Run(SceneEnterParams enterParams)
         {
-            _startLevelButton.onClick.AddListener(StartLevel);
+            _locationManager.Initialize(1, StartLevel);
         }
         
-        private void StartLevel()
+        private void StartLevel(Vector2Int locationLevel)
         {
             var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
             sceneLoader.LoadGameplayScene();
