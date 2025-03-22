@@ -1,7 +1,10 @@
-﻿using TMPro;
+﻿using DG.Tweening;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Sequence = DG.Tweening.Sequence;
 
 namespace Meta.Locations
 {
@@ -15,8 +18,10 @@ namespace Meta.Locations
         [SerializeField] private Sprite _passedLevel;
         [SerializeField] private Sprite _closedtLevel;
 
+        private Sequence _currentLevelSequence;
         public void Initialize(int LevelNumber, PinType pinType, UnityAction clickCallback)
         {
+            SetupCurrentLevelSequence();
             _text.text = $"Ур. {LevelNumber}";
 
             _image.sprite = pinType switch
@@ -26,8 +31,29 @@ namespace Meta.Locations
                 PinType.Passed => _passedLevel
             };
 
+            if (pinType == PinType.Current)
+            {
+                transform.DORotate(new(0, 0, 25), 0.1f).OnComplete(() => _currentLevelSequence.Play());
+                SetupCurrentLevelSequence();
+            }
+
             _button.onClick.AddListener(() =>  clickCallback?.Invoke());
             
+        }
+
+        private void SetupCurrentLevelSequence()
+        {
+            if (_currentLevelSequence != null) return;
+            _currentLevelSequence = DOTween.Sequence()
+                .Append(transform.DORotate(new Vector3(0, 0, -25), 0.2f))
+                .Append(transform.DORotate(new Vector3(0, 0, 25), 0.2f))
+                .SetLoops(-1)
+                .Pause();
+        }
+        // при удалении объекта со сцены.
+        private void OnDestroy()
+        {
+            _currentLevelSequence?.Kill();
         }
     }
 }
