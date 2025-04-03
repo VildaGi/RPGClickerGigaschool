@@ -272,7 +272,11 @@ MonoBehaviour:
     Reward: 100
   - Location: 5
     LevelNumber: 1
-    LevelBackgrounds: []
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
     Enemies:
     - Id: moose
       Hp: 70

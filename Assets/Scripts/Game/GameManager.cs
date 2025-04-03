@@ -99,7 +99,7 @@ namespace Game
                 _gameEnterParams.Level != progress.CurrentLevel) return;
             
             var maxLevel = _levelsConfig.GetMaxLevelOnLocation(progress.CurrentLocation);
-            if (progress.CurrentLevel + 1 >= maxLevel)
+            if (progress.CurrentLevel + 1 > maxLevel)
             {
                 progress.CurrentLevel = 1;
                 progress.CurrentLocation++;
