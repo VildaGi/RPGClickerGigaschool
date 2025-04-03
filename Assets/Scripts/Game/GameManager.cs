@@ -1,8 +1,10 @@
 using System;
 using Game.ClickButtons;
 using Game.Configs.LevelConfigs;
+using Game.Configs.SkillsConfig;
 using Game.EndLevel;
 using Game.Enemy;
+using Game.Skills;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
@@ -22,10 +24,12 @@ namespace Game
         [SerializeField] private Image _levelBackground;
     
         [SerializeField] private LevelsConfig _levelsConfig;
+        [SerializeField] private SkillsConfig _SkillsConfig;
         [SerializeField] private HealthBar.HealthBar _healthBar;
         
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
+        private SkillSystem _skillSystem;
         private const string SCENE_LOADER_TAG = "SceneLoader";
     
         public override void Run(SceneEnterParams enterParams)
@@ -45,11 +49,16 @@ namespace Game
             _menuButtonManager.Initialize();
             _enemyManager.Initialize(_healthBar, _timer);
             _endLevelWindow.Initialize();
+
+            var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
+            _skillSystem = new SkillSystem(openedSkills, _SkillsConfig, _enemyManager);
             
-        
-        
             // после инитиализации делаем нужные подписки.
-            _clickButtonManager.OnClicked += () => _enemyManager.DamageCurrentEnemy(1f);
+            _clickButtonManager.OnClicked += () =>
+            {
+                _enemyManager.DamageCurrentEnemy(1f);
+                _skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
+            };
             _clickButtonManager.OnFireClicked += () => _enemyManager.ChangeElementType(ElementType.Fire);
             _clickButtonManager.OnAirClicked += () => _enemyManager.ChangeElementType(ElementType.Air);
             _clickButtonManager.OnRockClicked += () => _enemyManager.ChangeElementType(ElementType.Rock);
@@ -58,16 +67,15 @@ namespace Game
             // из пустого метода мы должны выполнить метод и передать 1f.
             _endLevelWindow.OnNextClicked += NextLevel;
             _endLevelWindow.OnRestartClicked += RestartLevel;
-        
+            
             
             
             _menuButtonManager.OnMapClicked += OpenMap;
-        
             _enemyManager.OnLevelPassed += LevelPassed;
 
             StartLevel();
         }
-
+        
         private void OpenMap()
         {
             var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
