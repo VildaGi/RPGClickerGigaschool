@@ -1,0 +1,520 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43a53fe4462f5e48a62222578e2deb7, type: 3}
+  m_Name: LevelsConfig
+  m_EditorClassIdentifier: 
+  Levels:
+  - Location: 1
+    LevelNumber: 1
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: fox
+      Hp: 10
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    Reward: 10
+  - Location: 1
+    LevelNumber: 2
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: fox
+      Hp: 15
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    Reward: 15
+  - Location: 1
+    LevelNumber: 3
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: raccoon
+      Hp: 15
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    Reward: 15
+  - Location: 1
+    LevelNumber: 4
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: fox
+      Hp: 20
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    Reward: 20
+  - Location: 1
+    LevelNumber: 5
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: fox
+      Hp: 25
+      IsBoss: 1
+      BossTime: 30
+      Element: 1
+    Reward: 45
+  - Location: 2
+    LevelNumber: 1
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: boar
+      Hp: 25
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    Reward: 30
+  - Location: 2
+    LevelNumber: 2
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: boar
+      Hp: 30
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    Reward: 35
+  - Location: 2
+    LevelNumber: 3
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: fox
+      Hp: 30
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    Reward: 35
+  - Location: 2
+    LevelNumber: 4
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: boar
+      Hp: 40
+      IsBoss: 1
+      BossTime: 25
+      Element: 2
+    Reward: 55
+  - Location: 3
+    LevelNumber: 1
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: deer
+      Hp: 40
+      IsBoss: 0
+      BossTime: 0
+      Element: 4
+    Reward: 50
+  - Location: 3
+    LevelNumber: 2
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: deer
+      Hp: 45
+      IsBoss: 0
+      BossTime: 0
+      Element: 4
+    Reward: 55
+  - Location: 3
+    LevelNumber: 3
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: moose
+      Hp: 50
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    Reward: 60
+  - Location: 3
+    LevelNumber: 4
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: owl
+      Hp: 50
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    Reward: 60
+  - Location: 3
+    LevelNumber: 5
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: moose
+      Hp: 55
+      IsBoss: 1
+      BossTime: 25
+      Element: 2
+    Reward: 70
+  - Location: 4
+    LevelNumber: 1
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: owl
+      Hp: 30
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    - Id: owl
+      Hp: 35
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    Reward: 65
+  - Location: 4
+    LevelNumber: 2
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: deer
+      Hp: 65
+      IsBoss: 0
+      BossTime: 0
+      Element: 4
+    Reward: 75
+  - Location: 4
+    LevelNumber: 3
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: bear
+      Hp: 70
+      IsBoss: 0
+      BossTime: 0
+      Element: 4
+    Reward: 80
+  - Location: 4
+    LevelNumber: 4
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: bear
+      Hp: 75
+      IsBoss: 1
+      BossTime: 24.8
+      Element: 4
+    Reward: 100
+  - Location: 5
+    LevelNumber: 1
+    LevelBackgrounds: []
+    Enemies:
+    - Id: moose
+      Hp: 70
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    Reward: 90
+  - Location: 5
+    LevelNumber: 2
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: moose
+      Hp: 75
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    Reward: 95
+  - Location: 5
+    LevelNumber: 3
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: owl
+      Hp: 50
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    - Id: owl
+      Hp: 55
+      IsBoss: 1
+      BossTime: 25
+      Element: 3
+    Reward: 120
+  - Location: 5
+    LevelNumber: 4
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: moose
+      Hp: 80
+      IsBoss: 1
+      BossTime: 25
+      Element: 2
+    Reward: 105
+  - Location: 5
+    LevelNumber: 5
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: forest_spirit
+      Hp: 90
+      IsBoss: 1
+      BossTime: 20
+      Element: 2
+    Reward: 110
+  - Location: 6
+    LevelNumber: 1
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: bear
+      Hp: 90
+      IsBoss: 0
+      BossTime: 0
+      Element: 4
+    Reward: 100
+  - Location: 6
+    LevelNumber: 2
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: wolf
+      Hp: 100
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    Reward: 110
+  - Location: 6
+    LevelNumber: 3
+    LevelBackgrounds:
+    - {fileID: -1711753425850032101, guid: 8f76b2449aab8bc449d669065b683512, type: 3}
+    - {fileID: 4390655870631583448, guid: 65061eb8376d8b843ad3561d8b0dc860, type: 3}
+    - {fileID: 8647899175923987999, guid: 634b66ee46a708c45a4dd34ba223adfc, type: 3}
+    - {fileID: -6491420789955138127, guid: 58ba8caae132f5c4d9674234c09e725b, type: 3}
+    Enemies:
+    - Id: wolf
+      Hp: 110
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    Reward: 120
+  - Location: 6
+    LevelNumber: 4
+    LevelBackgrounds:
+    - {fileID: 8115363548714976778, guid: 3e731166ba2833846bf1df575b5c9632, type: 3}
+    Enemies:
+    - Id: wolf
+      Hp: 115
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    Reward: 125
+  - Location: 6
+    LevelNumber: 5
+    LevelBackgrounds:
+    - {fileID: 8115363548714976778, guid: 3e731166ba2833846bf1df575b5c9632, type: 3}
+    Enemies:
+    - Id: wolf
+      Hp: 120
+      IsBoss: 1
+      BossTime: 25
+      Element: 1
+    Reward: 140
+  - Location: 7
+    LevelNumber: 1
+    LevelBackgrounds:
+    - {fileID: -3385287396143406894, guid: ec5028ee99e18b24ca570a4ad48294e8, type: 3}
+    - {fileID: 5747794900431342779, guid: 87cd980b9a133d542b29afa361e92f60, type: 3}
+    Enemies:
+    - Id: air_owl
+      Hp: 55
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    - Id: air_owl
+      Hp: 65
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    Reward: 120
+  - Location: 7
+    LevelNumber: 2
+    LevelBackgrounds:
+    - {fileID: -3385287396143406894, guid: ec5028ee99e18b24ca570a4ad48294e8, type: 3}
+    - {fileID: 5747794900431342779, guid: 87cd980b9a133d542b29afa361e92f60, type: 3}
+    Enemies:
+    - Id: spider
+      Hp: 55
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    - Id: spider
+      Hp: 60
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    Reward: 120
+  - Location: 7
+    LevelNumber: 3
+    LevelBackgrounds:
+    - {fileID: -3385287396143406894, guid: ec5028ee99e18b24ca570a4ad48294e8, type: 3}
+    - {fileID: 5747794900431342779, guid: 87cd980b9a133d542b29afa361e92f60, type: 3}
+    Enemies:
+    - Id: spider
+      Hp: 60
+      IsBoss: 0
+      BossTime: 0
+      Element: 2
+    - Id: spider
+      Hp: 65
+      IsBoss: 1
+      BossTime: 25
+      Element: 2
+    Reward: 140
+  - Location: 7
+    LevelNumber: 4
+    LevelBackgrounds:
+    - {fileID: -3385287396143406894, guid: ec5028ee99e18b24ca570a4ad48294e8, type: 3}
+    - {fileID: 5747794900431342779, guid: 87cd980b9a133d542b29afa361e92f60, type: 3}
+    Enemies:
+    - Id: bat
+      Hp: 55
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    - Id: bat
+      Hp: 60
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    Reward: 125
+  - Location: 7
+    LevelNumber: 5
+    LevelBackgrounds:
+    - {fileID: -3385287396143406894, guid: ec5028ee99e18b24ca570a4ad48294e8, type: 3}
+    - {fileID: 5747794900431342779, guid: 87cd980b9a133d542b29afa361e92f60, type: 3}
+    Enemies:
+    - Id: bat
+      Hp: 60
+      IsBoss: 0
+      BossTime: 0
+      Element: 3
+    - Id: air_owl
+      Hp: 70
+      IsBoss: 1
+      BossTime: 25
+      Element: 3
+    Reward: 150
+  - Location: 7
+    LevelNumber: 6
+    LevelBackgrounds:
+    - {fileID: -3385287396143406894, guid: ec5028ee99e18b24ca570a4ad48294e8, type: 3}
+    - {fileID: 5747794900431342779, guid: 87cd980b9a133d542b29afa361e92f60, type: 3}
+    Enemies:
+    - Id: wolf
+      Hp: 135
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    Reward: 150
+  - Location: 7
+    LevelNumber: 7
+    LevelBackgrounds:
+    - {fileID: -331637589350697002, guid: 1447e6434e8ea494a9d76044d9945dd3, type: 3}
+    Enemies:
+    - Id: wolf
+      Hp: 120
+      IsBoss: 0
+      BossTime: 0
+      Element: 1
+    - Id: blood_werewolf
+      Hp: 140
+      IsBoss: 1
+      BossTime: 20
+      Element: 1
+    Reward: 250

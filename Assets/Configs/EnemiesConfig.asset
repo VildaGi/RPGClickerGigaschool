@@ -14,5 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 3638985803626598421, guid: 8d6dc84772c14dc4a9c5cc55b3ba4e8c, type: 3}
   Enemies:
-  - Health: 10
+  - Id: wolf
     Sprite: {fileID: -1081284824413689449, guid: 0816251dc3693774e97336b6ac3a3fa9, type: 3}
+  - Id: air_owl
+    Sprite: {fileID: -8147419228928213479, guid: 081f503d0f43d724295c02de165efc64, type: 3}
+  - Id: bat
+    Sprite: {fileID: -697763020151794088, guid: 37df1be0b82e5854f9eba635709ce5d9, type: 3}
+  - Id: blood_werewolf
+    Sprite: {fileID: -7206418530231697046, guid: db79431ff9fa07a4bbcc7374aa1e68fd, type: 3}
+  - Id: boar
+    Sprite: {fileID: -1866223138761978688, guid: 45038c5988bb44a48b91d64366e67ef3, type: 3}
+  - Id: bear
+    Sprite: {fileID: 2106163804239965097, guid: c5204fc848c35c047925195dfcfdb8fa, type: 3}
+  - Id: deer
+    Sprite: {fileID: -8275662115178358402, guid: 73dcd5c33ab5a904ebc175d1fc4fc0be, type: 3}
+  - Id: forest_spirit
+    Sprite: {fileID: -6827436975746733685, guid: 222706f6a726c9248916468c83e87e66, type: 3}
+  - Id: fox
+    Sprite: {fileID: -4702544020559098553, guid: 345bc07f0de8d154691297105cf538ee, type: 3}
+  - Id: moose
+    Sprite: {fileID: 290418334460826483, guid: 7fbb92bc97e605d4ead3ae0715a32712, type: 3}
+  - Id: owl
+    Sprite: {fileID: 7577114598852633483, guid: 5345b8b5869c817469ecf268dc48775b, type: 3}
+  - Id: raccon
+    Sprite: {fileID: 1064988734043881895, guid: 02c172d06c1791447ace7b1e839b9246, type: 3}
+  - Id: spider
+    Sprite: {fileID: 3873087697204469031, guid: c5b2b8d597c3d934bbcc57e8e82b0d91, type: 3}

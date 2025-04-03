@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24469e82fc644bd946e63e38ac4f76e, type: 3}
   m_Name: ClickButtonConfig
   m_EditorClassIdentifier: 
-  DefaultSprite: {fileID: 6965212599342224798, guid: 9ccbf4178477d3b42aa0cc9a644a7d19, type: 3}
+  DefaultSprite: {fileID: 54729816570141633, guid: bf45f76340e091747b8b03029aa15725, type: 3}
+  FireSprite: {fileID: 8334651344603559088, guid: fcc8cc79a769c2d43a80f05dca08078e, type: 3}
+  FireSwordButtonSprite: {fileID: 3822866451630758944, guid: 26c2e21de7861ed4e97566364db51318, type: 3}
+  RockSprite: {fileID: 2115267796186251350, guid: 72239652c78b7eb4a9a0736b9e0c26d4, type: 3}
+  RockSwordButtonSprite: {fileID: 341515641851211765, guid: 4088374dbd08a9b4f863016877e18f38, type: 3}
+  WaterSprite: {fileID: 8509550459451208454, guid: 92918554ca3f4be4299ea30d56884ad9, type: 3}
+  WaterSwordButtonSprite: {fileID: -6205208064401757949, guid: 311f0483dd1852643bb260e763f30bc1, type: 3}
+  AirSprite: {fileID: 6403592337670178971, guid: 295d23984e5788945991c23ee74a5231, type: 3}
+  AirSwordButtonSprite: {fileID: 7553886197613725644, guid: b368a1d8877fd6640abc4335731215db, type: 3}
   ButtonColors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.09174416, g: 0, b: 0.94716984, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1

@@ -332,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6915442205041548377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -368,8 +368,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7227c6078ae94ca2adc0a19eeff3cf9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loseLevelWindow: {fileID: 1166841435063230766}
-  _winLevelWindow: {fileID: 5096426659338600611}
+  _loseLevelWindow: {fileID: 8800935270115483}
+  _winLevelWindow: {fileID: 6977323865876892352}
+  _loseRestartButton: {fileID: 9209408679340313152}
+  _winRestartButton: {fileID: 54931304277693547}
 --- !u!223 &3179556242171999917
 Canvas:
   m_ObjectHideFlags: 0
@@ -717,7 +719,7 @@ GameObject:
   - component: {fileID: 7971259274555444280}
   - component: {fileID: 8491701201883349896}
   m_Layer: 5
-  m_Name: Image
+  m_Name: MenuClosingImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -792,7 +794,7 @@ GameObject:
   - component: {fileID: 2855785569556399774}
   - component: {fileID: 7542688512600940923}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FadeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

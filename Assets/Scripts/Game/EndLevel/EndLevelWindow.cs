@@ -1,48 +1,49 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
-namespace Game
+namespace Game.EndLevel
 {
     public class EndLevelWindow : MonoBehaviour
     {
-        [SerializeField] private LoseWindow _loseLevelWindow;
-        [SerializeField] private WinWindow _winLevelWindow;
+        [SerializeField] private GameObject _loseLevelWindow;
+        [SerializeField] private GameObject _winLevelWindow;
+        
+        [SerializeField] private Button _loseRestartButton;
+        [SerializeField] private Button _winRestartButton;
 
     
-        private Statistics _statistics;
+        public event UnityAction OnRestartClicked;
+        public event UnityAction OnNextClicked;
     
-        public void Initialize(Statistics statistics)
+        public void Initialize()
         {
-            _winLevelWindow.Initialize();
-            _loseLevelWindow.Initialize();
-            _statistics = statistics;
+            _loseRestartButton.onClick.AddListener(Restart);
+            _winRestartButton.onClick.AddListener(Next);
         }
-
-        public WinWindow GetWinWindow()
-        {
-            return _winLevelWindow;
-        }
-        public LoseWindow GetLoseWindow()
-        {
-            return _loseLevelWindow;
-        }
+        
         public void ShowLoseWindow()
         {
-            _loseLevelWindow.Show();
-            _winLevelWindow.Hide();
+            _loseLevelWindow.SetActive(true);
+            _winLevelWindow.SetActive(false);
             gameObject.SetActive(true);
         }
         public void ShowWinWindow()
         {
-            _loseLevelWindow.Hide();
-            _winLevelWindow.SetBestTime(_statistics.GetBestTime());
-            _winLevelWindow.Show();
+            _loseLevelWindow.SetActive(false);
+            _winLevelWindow.SetActive(true);
             gameObject.SetActive(true);
         }
 
-        public void Hide()
+
+        private void Restart()
         {
-            _loseLevelWindow.Hide();
-            _winLevelWindow.Hide();
+            OnRestartClicked?.Invoke();
+            gameObject.SetActive(false);
+        }
+        private void Next()
+        {
+            OnNextClicked?.Invoke();
             gameObject.SetActive(false);
         }
     }

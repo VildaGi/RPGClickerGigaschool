@@ -19,24 +19,25 @@ namespace Meta.Locations
         [SerializeField] private Sprite _closedtLevel;
 
         private Sequence _currentLevelSequence;
-        public void Initialize(int LevelNumber, PinType pinType, UnityAction clickCallback)
+        public void Initialize(int LevelNumber, ProgressState progressState, UnityAction clickCallback)
         {
-            SetupCurrentLevelSequence();
+            // SetupCurrentLevelSequence();
             _text.text = $"Ур. {LevelNumber}";
 
-            _image.sprite = pinType switch
+            _image.sprite = progressState switch
             {
-                PinType.Closed => _closedtLevel,
-                PinType.Current => _currentLevel,
-                PinType.Passed => _passedLevel
+                ProgressState.Closed => _closedtLevel,
+                ProgressState.Current => _currentLevel,
+                ProgressState.Passed => _passedLevel
             };
 
-            if (pinType == PinType.Current)
+           // if (pinType == PinType.Current && _currentLevelSequence != null)
             {
-                transform.DORotate(new(0, 0, 25), 0.1f).OnComplete(() => _currentLevelSequence.Play());
-                SetupCurrentLevelSequence();
+               // transform.DORotate(new(0, 0, 25), 0.1f).OnComplete(() => _currentLevelSequence.Play());
+               // SetupCurrentLevelSequence();
+                //DOTween.Sequence().AppendCallback(SetupCurrentLevelSequence);
             }
-
+            
             _button.onClick.AddListener(() =>  clickCallback?.Invoke());
             
         }
@@ -47,13 +48,15 @@ namespace Meta.Locations
             _currentLevelSequence = DOTween.Sequence()
                 .Append(transform.DORotate(new Vector3(0, 0, -25), 0.2f))
                 .Append(transform.DORotate(new Vector3(0, 0, 25), 0.2f))
-                .SetLoops(-1)
+                .SetLoops(-1, LoopType.Yoyo)
                 .Pause();
         }
+        
         // при удалении объекта со сцены.
         private void OnDestroy()
         {
-            _currentLevelSequence?.Kill();
+            _currentLevelSequence.Kill();
         }
+        
     }
 }

@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game
+namespace Game.HealthBar
 {
     public class HealthBar : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
+        [SerializeField] private Image _image;
 
         public void Show()
         {
@@ -25,6 +26,11 @@ namespace Game
         public void DecreaseValue(float value)
         {
             _slider.value -= value;
+        }
+
+        public void SetImage(Sprite sprite)
+        {
+            _image.sprite = sprite;
         }
     }
 }

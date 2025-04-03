@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Game
+namespace Game.EndLevel
 {
     public class WinWindow : MonoBehaviour
     {

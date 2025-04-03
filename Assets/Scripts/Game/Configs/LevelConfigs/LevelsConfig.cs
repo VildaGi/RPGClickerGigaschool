@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Game.Configs.Levels.Data;
 using UnityEngine;
 
-namespace Game.Configs.Levels {
+namespace Game.Configs.LevelConfigs {
     [CreateAssetMenu(menuName="Configs/LevelsConfig", fileName = "LevelsConfig")]
     public class LevelsConfig : ScriptableObject {
         public List<LevelData> Levels;
@@ -15,6 +14,22 @@ namespace Game.Configs.Levels {
             
             Debug.LogError($"Not found Level data for location {location} and level {level}");
             return default;
+        }
+
+        public int GetMaxLevelOnLocation(int location)
+        {
+            var maxLevel = 0;
+            foreach (var levelData in Levels)
+            {
+                if (location == levelData.Location)
+                {
+                    if(location != levelData.Location) continue;
+                    if(levelData.LevelNumber <= maxLevel) continue;
+                    maxLevel = levelData.LevelNumber;
+                }
+            }
+            
+            return maxLevel;
         }
     }
     

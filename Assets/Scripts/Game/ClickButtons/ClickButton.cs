@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Game
+namespace Game.ClickButtons
 {
     public class ClickButton : MonoBehaviour
     {

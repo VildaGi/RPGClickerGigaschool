@@ -1,51 +1,34 @@
-﻿using UnityEngine;
+﻿using Game.Configs;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class MenuButtonManager : MonoBehaviour
+namespace Game
 {
-    [SerializeField] private Image _menuImage;
-    
-    [SerializeField] private MenuButton _attackMenuButton;
-    [SerializeField] private MenuButton _skillsMenuButton;
-    [SerializeField] private MenuButton _InventoryMenuButton;
-    [SerializeField] private StopGameButton _StopGameButton;
-    
-    [SerializeField] private MenuButtonConfig _MenuButtonConfig;
-    
-    public event UnityAction OnPauseGameClicked;
-    public event UnityAction OnInventoryMenuClicked;
-    public event UnityAction OnSkillsMenuClicked;
-    public event UnityAction OnAttackMenuClicked;
-    
-    public void Initialize()
+    public class MenuButtonManager : MonoBehaviour
     {
-        _attackMenuButton.Initialize(_MenuButtonConfig.AttackDefaultSprite, _MenuButtonConfig.ButtonColors, _MenuButtonConfig.AttackSelectedSprite);
-        _attackMenuButton.SubscribeOnClick(AttackMenuClick);
-        _attackMenuButton.SubscribeOnClick(() => OnAttackMenuClicked?.Invoke());
+    
+        [SerializeField] private MenuButton _attackMenuButton;
+        [SerializeField] private MenuButton _MapButton;
+        [SerializeField] private MenuButton _ShopButton;
+    
+        [SerializeField] private MenuButtonConfig _MenuButtonConfig;
         
-        _skillsMenuButton.Initialize(_MenuButtonConfig.SkillsDefaultSprite, _MenuButtonConfig.ButtonColors, _MenuButtonConfig.SkillsSelectedSprite);
-        _skillsMenuButton.SubscribeOnClick(SkillsMenuClick);
-        _skillsMenuButton.SubscribeOnClick(() => OnSkillsMenuClicked?.Invoke());
+        public event UnityAction OnMapClicked;
+        public event UnityAction OnShopClicked;
+        public event UnityAction OnAttackMenuClicked;
+    
+        public void Initialize()
+        {
+            _attackMenuButton.Initialize(_MenuButtonConfig.AttackDefaultSprite, _MenuButtonConfig.ButtonColors);
+            _attackMenuButton.SubscribeOnClick(() => OnAttackMenuClicked?.Invoke());
         
-        _InventoryMenuButton.Initialize(_MenuButtonConfig.InventoryDefaultSprite, _MenuButtonConfig.ButtonColors, _MenuButtonConfig.InventorySelectedSprite);
-        _InventoryMenuButton.SubscribeOnClick(InventoryMenuClick);
-        _InventoryMenuButton.SubscribeOnClick(() => OnInventoryMenuClicked?.Invoke());
-        
-        _StopGameButton.Initialize(_MenuButtonConfig.PauseButtonSprite, _MenuButtonConfig.ResumeButtonSprite, _MenuButtonConfig.ButtonColors);
-        _StopGameButton.SubscribeOnClick(() => OnPauseGameClicked?.Invoke());
-        _StopGameButton.SubscribeOnClick(_StopGameButton.ChangeImage);
-    }
-    private void InventoryMenuClick()
-    {
-        _menuImage.sprite = _InventoryMenuButton._selectedImage;
-    }
-    private void AttackMenuClick()
-    {
-        _menuImage.sprite = _attackMenuButton._selectedImage;
-    }
-    private void SkillsMenuClick()
-    {
-        _menuImage.sprite = _skillsMenuButton._selectedImage;
+            _MapButton.Initialize(_MenuButtonConfig.MapDefaultSprite, _MenuButtonConfig.ButtonColors);
+            _MapButton.SubscribeOnClick(() => OnMapClicked?.Invoke());
+            
+            _ShopButton.Initialize(_MenuButtonConfig.ShopDefaultSprite, _MenuButtonConfig.ButtonColors);
+            _ShopButton.SubscribeOnClick(() => OnShopClicked?.Invoke());
+            
+        }
     }
 }

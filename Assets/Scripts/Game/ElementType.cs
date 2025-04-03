@@ -1,10 +1,11 @@
 ﻿namespace Game
 {
-    public enum Element
+    public enum ElementType
     {
         Fire = 1,
-        Earth = 2,
-        Wind = 3,
-        Water = 4
+        Rock = 2,
+        Air = 3,
+        Water = 4,
+        NoneElement = 5
     }
 }

@@ -8,19 +8,27 @@ namespace Meta.Locations
     {
         [SerializeField] private List<Pin> _pins;
 
-        public void Initialize(UnityAction<int> levelStartCallback)
+        public void Initialize(ProgressState locationState, int currentLevel ,UnityAction<int> levelStartCallback)
         {
-            var currentLevel = 3;
-
             for (var i = 0; i < _pins.Count; i++)
             {
                 var level = i + 1;
-                var pinType = currentLevel > level 
-                    ? PinType.Passed 
-                    : currentLevel == level 
-                        ? PinType.Current 
-                        : PinType.Closed;
-                _pins[i].Initialize(level, pinType, () => levelStartCallback?.Invoke(level));
+                ProgressState progressState = locationState switch
+                {
+                    ProgressState.Closed => ProgressState.Closed,
+                    ProgressState.Passed => ProgressState.Passed,
+                    _ => currentLevel > level ? ProgressState.Passed :
+                        currentLevel == level ? ProgressState.Current : ProgressState.Closed
+                };
+
+                if (progressState == ProgressState.Closed)
+                {
+                    _pins[i].Initialize(level, progressState, null);
+                }
+                else
+                {
+                    _pins[i].Initialize(level, progressState, () => levelStartCallback?.Invoke(level));
+                }
             }
         }
 

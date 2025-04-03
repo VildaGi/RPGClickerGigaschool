@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -13,10 +14,10 @@ namespace Meta.Locations
         [SerializeField] private List<Location> _locations;
         private int _currentLocation;
 
-        public void Initialize(int currentLocation, UnityAction<Vector2Int> startLevelCallback)
+        public void Initialize(Progress progress, UnityAction<int, int> startLevelCallback)
         {
-            _currentLocation = currentLocation;
-            InitLocation(currentLocation, startLevelCallback);
+            _currentLocation = progress.CurrentLocation;
+            InitLocation(progress, startLevelCallback);
             InitializeMoveLocationButtons();
         }
         private void InitializeMoveLocationButtons()
@@ -68,13 +69,23 @@ namespace Meta.Locations
                 _previousButton.gameObject.SetActive(false);
             }
         }
-        private void InitLocation(int currentLocation, UnityAction<Vector2Int> startLevelCallback)
+        private void InitLocation(Progress progress, UnityAction<int, int> startLevelCallback)
         {
             for (var i = 0; i < _locations.Count; i++)
             {
                 var locationNumber = i + 1;
-                _locations[i].Initialize(level => startLevelCallback.Invoke(new(locationNumber, level))); //Идем снизу вверх по передачи интов.
-                _locations[i].SetActive(currentLocation == locationNumber);
+
+
+                ProgressState isLocationPassed = progress.CurrentLocation > locationNumber
+                    ? ProgressState.Passed
+                    : progress.CurrentLocation == locationNumber
+                        ? ProgressState.Current
+                        : ProgressState.Closed;
+                
+                var currentLevel = progress.CurrentLevel;
+                
+                _locations[i].Initialize(isLocationPassed, currentLevel,level => startLevelCallback?.Invoke(locationNumber, level)); //Идем снизу вверх по передачи интов.
+                _locations[i].SetActive(progress.CurrentLocation == locationNumber);
             }
         }
     }

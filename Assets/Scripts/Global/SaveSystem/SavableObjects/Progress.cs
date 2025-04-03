@@ -1,4 +1,4 @@
-﻿namespace Global.SaveSystem
+﻿namespace Global.SaveSystem.SavableObjects
 {
     public class Progress : ISavable {
         public int CurrentLocation = 1;

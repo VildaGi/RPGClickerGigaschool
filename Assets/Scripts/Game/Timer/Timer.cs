@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Game
+namespace Game.Timer
 {
     public class Timer : MonoBehaviour
     {
