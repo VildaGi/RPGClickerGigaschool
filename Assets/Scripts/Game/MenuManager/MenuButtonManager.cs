@@ -1,9 +1,8 @@
 ﻿using Game.Configs;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
-namespace Game
+namespace Game.MenuManager
 {
     public class MenuButtonManager : MonoBehaviour
     {

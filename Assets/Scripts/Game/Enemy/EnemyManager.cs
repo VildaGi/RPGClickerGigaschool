@@ -1,5 +1,6 @@
 ﻿using Game.Configs;
 using Game.Configs.LevelConfigs;
+using Game.Elements;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,7 +26,7 @@ namespace Game.Enemy
         private ElementType _attackElement;
         
 
-        public event UnityAction<bool> OnLevelPassed;
+        public event UnityAction<bool, int> OnLevelPassed;
 
         public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer)
         {
@@ -40,7 +41,7 @@ namespace Game.Enemy
             
             if (_currentEnemyIndex >= _levelData.Enemies.Count)
             {
-                OnLevelPassed?.Invoke(true);
+                OnLevelPassed?.Invoke(true, _levelData.Reward);
                 _timer.Stop();
                 return;
             }
@@ -52,7 +53,7 @@ namespace Game.Enemy
             if (currentEnemy.IsBoss)
             {
                 _timer.SetValue(currentEnemy.BossTime);
-                _timer.OnTimerEnd += () => OnLevelPassed?.Invoke(false);
+                _timer.OnTimerEnd += () => OnLevelPassed?.Invoke(false, 0);
             }
             
             InitHpBar(currentEnemy.Hp, currentEnemy.Element);

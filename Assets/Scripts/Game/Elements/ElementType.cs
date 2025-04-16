@@ -1,4 +1,4 @@
-﻿namespace Game
+﻿namespace Game.Elements
 {
     public enum ElementType
     {

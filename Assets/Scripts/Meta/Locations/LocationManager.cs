@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Game;
+using Game.WalletWindow;
 using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,14 +12,16 @@ namespace Meta.Locations
     {
         [SerializeField] private Button _nextButton;
         [SerializeField] private Button _previousButton;
+        [SerializeField] private WalletWindow _walletWindow;
         
         [SerializeField] private List<Location> _locations;
         private int _currentLocation;
 
-        public void Initialize(Progress progress, UnityAction<int, int> startLevelCallback)
+        public void Initialize(Progress progress, Wallet wallet, UnityAction<int, int> startLevelCallback)
         {
             _currentLocation = progress.CurrentLocation;
             InitLocation(progress, startLevelCallback);
+            _walletWindow.Initialize(wallet);
             InitializeMoveLocationButtons();
         }
         private void InitializeMoveLocationButtons()

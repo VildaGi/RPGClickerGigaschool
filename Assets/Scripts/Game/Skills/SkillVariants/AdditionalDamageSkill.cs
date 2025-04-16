@@ -1,8 +1,10 @@
 ﻿using Game.Enemy;
 using Game.Skills.Data;
+using UnityEngine.Scripting;
 
 namespace Game.Skills.SkillVariants
 {
+    [Preserve]
     public class AdditionalDamageSkill : Skill
     {
         private SkillDataByLevel _skillData;

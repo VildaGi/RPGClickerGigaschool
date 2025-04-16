@@ -2,40 +2,48 @@ using System;
 using Game.ClickButtons;
 using Game.Configs.LevelConfigs;
 using Game.Configs.SkillsConfig;
+using Game.Elements;
 using Game.EndLevel;
 using Game.Enemy;
+using Game.MenuManager;
 using Game.Skills;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
 
 namespace Game
 {
-    public class GameManager : EntryPoint
+    public class GameEntryPoint : EntryPoint
     {
         [SerializeField] private ClickButtonManager _clickButtonManager;
         [SerializeField] private MenuButtonManager _menuButtonManager;
         [SerializeField] private EnemyManager _enemyManager;
+        [SerializeField] private Image _levelBackground;
         [SerializeField] private EndLevelWindow _endLevelWindow;
         [SerializeField] private Timer.Timer _timer;
-        [SerializeField] private Image _levelBackground;
-    
+        [SerializeField] private WalletWindow.WalletWindow _walletWindow;
+        [SerializeField] private HealthBar.HealthBar _healthBar;
+
         [SerializeField] private LevelsConfig _levelsConfig;
         [SerializeField] private SkillsConfig _SkillsConfig;
-        [SerializeField] private HealthBar.HealthBar _healthBar;
-        
+
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
         private SkillSystem _skillSystem;
-        private const string SCENE_LOADER_TAG = "SceneLoader";
+        private EndLevelSystem _endLevelSystem;
+        private SceneLoader _sceneLoader;
+        private const string COMMON_OBJECT_TAG = "CommonObject";
     
         public override void Run(SceneEnterParams enterParams)
         {
-            _saveSystem = FindFirstObjectByType<SaveSystem>();
+            var commonObject = GameObject.FindWithTag(COMMON_OBJECT_TAG).GetComponent<CommonObject>();
             
+            _saveSystem = commonObject.SaveSystem;
+            _sceneLoader = commonObject.SceneLoader;
             if (enterParams is not GameEnterParams gameEnterParams)
             {
                 Debug.LogError("Game Enter Params are invalid");
@@ -49,14 +57,17 @@ namespace Game
             _menuButtonManager.Initialize();
             _enemyManager.Initialize(_healthBar, _timer);
             _endLevelWindow.Initialize();
+            _walletWindow.Initialize((Wallet)_saveSystem.GetData(SavableObjectType.Wallet));
 
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
             _skillSystem = new SkillSystem(openedSkills, _SkillsConfig, _enemyManager);
+            _endLevelSystem = new(_endLevelWindow, _saveSystem, _gameEnterParams, _levelsConfig);
+            
             
             // после инитиализации делаем нужные подписки.
             _clickButtonManager.OnClicked += () =>
             {
-                _enemyManager.DamageCurrentEnemy(1f);
+                //_enemyManager.DamageCurrentEnemy(1f);
                 _skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
             };
             _clickButtonManager.OnFireClicked += () => _enemyManager.ChangeElementType(ElementType.Fire);
@@ -71,58 +82,34 @@ namespace Game
             
             
             _menuButtonManager.OnMapClicked += OpenMap;
-            _enemyManager.OnLevelPassed += LevelPassed;
+            _enemyManager.OnLevelPassed += _endLevelSystem.LevelPassed;
 
             StartLevel();
         }
         
         private void OpenMap()
         {
-            var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
-            sceneLoader.LoadMetaScene();
+            _sceneLoader.LoadMetaScene();
         }
 
         private void RestartLevel()
         {
-            var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
-            sceneLoader.LoadGameplayScene(_gameEnterParams);
-        }
-        private void LevelPassed(bool isPassed)
-        {
-            if (isPassed)
-            {
-                TrySaveProgress();
-                _endLevelWindow.ShowWinWindow();
-            }
-            else
-            {
-                _endLevelWindow.ShowLoseWindow();
-            }
-        }
-
-        private void TrySaveProgress()
-        {
-            var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
-            if (_gameEnterParams.Location != progress.CurrentLocation ||
-                _gameEnterParams.Level != progress.CurrentLevel) return;
-            
-            var maxLevel = _levelsConfig.GetMaxLevelOnLocation(progress.CurrentLocation);
-            if (progress.CurrentLevel + 1 > maxLevel)
-            {
-                progress.CurrentLevel = 1;
-                progress.CurrentLocation++;
-            }else
-            {
-                progress.CurrentLevel++;
-            }
-            
-            _saveSystem.SaveData(SavableObjectType.Progress);
-
+            _sceneLoader.LoadGameplayScene(_gameEnterParams);
         }
 
         private void StartLevel()
         {
-            var levelData = _levelsConfig.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
+            var maxLocationAndLevel = _levelsConfig.GetMaxLocationAndLevel();
+            var location = _gameEnterParams.Location;
+            var level = _gameEnterParams.Level;
+            if (_gameEnterParams.Location > maxLocationAndLevel.x ||
+                (_gameEnterParams.Location == maxLocationAndLevel.x && level > maxLocationAndLevel.y))
+            {
+                location = maxLocationAndLevel.x;
+                level = maxLocationAndLevel.y;
+            }
+            
+            var levelData = _levelsConfig.GetLevel(location, level);
             Debug.Log($"{_gameEnterParams.Location} {_gameEnterParams.Level}");
             
             // выбор случайного уровня из возможных
@@ -131,8 +118,7 @@ namespace Game
         }
         private void NextLevel()
         {
-            var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
-            sceneLoader.LoadMetaScene(_gameEnterParams);
+            _sceneLoader.LoadMetaScene(_gameEnterParams);
         }
     }
 }

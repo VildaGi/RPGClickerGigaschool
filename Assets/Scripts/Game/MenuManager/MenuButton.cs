@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Game
+namespace Game.MenuManager
 {
     public class MenuButton : MonoBehaviour
     {

@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Elements;
 
 namespace Game.Configs.LevelConfigs {
     [Serializable]

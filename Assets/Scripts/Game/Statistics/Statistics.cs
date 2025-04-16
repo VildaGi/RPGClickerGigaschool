@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game
+namespace Game.Statistics
 {
     public class Statistics : MonoBehaviour
     {
