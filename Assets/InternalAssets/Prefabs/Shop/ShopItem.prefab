@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 173}
+  m_SizeDelta: {x: 458.7631, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8534013675581854152
 CanvasRenderer:
@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -717,8 +717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.00012207031}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -7.1021, y: -39.0615}
+  m_SizeDelta: {x: 706.6183, y: 312.7785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5893838132374155613
 CanvasRenderer:
@@ -757,8 +757,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -872,6 +872,7 @@ MonoBehaviour:
   _label: {fileID: 9099481933471207584}
   _description: {fileID: 454426773245615916}
   _cost: {fileID: 2602060328431855660}
+  _level: {fileID: 125954713386072885}
   _button: {fileID: 1055792708104648732}
   _itemBorder: {fileID: 1424475731345352256}
   _buyButton: {fileID: 3596748710038065562}

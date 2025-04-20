@@ -18,7 +18,7 @@ namespace Game.Skills.SkillVariants
 
         public override void SkillProcess()
         {
-            _enemyManager.DamageCurrentEnemy(_skillData.Value);
+            _enemyManager.IncreasePlayerDamage(_skillData.Value);
         }
     }
 }

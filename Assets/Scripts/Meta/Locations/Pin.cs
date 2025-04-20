@@ -28,7 +28,8 @@ namespace Meta.Locations
             {
                 ProgressState.Closed => _closedtLevel,
                 ProgressState.Current => _currentLevel,
-                ProgressState.Passed => _passedLevel
+                ProgressState.Passed => _passedLevel,
+                _ => null
             };
 
            // if (pinType == PinType.Current && _currentLevelSequence != null)

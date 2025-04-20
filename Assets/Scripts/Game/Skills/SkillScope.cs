@@ -5,6 +5,7 @@ namespace Game.Skills
 {
     public class SkillScope
     {
-        [SerializeField] public EnemyManager EnemyManager;
+        public EnemyManager EnemyManager;
+        public StatusManager.StatusManager StatusManager;
     }
 }

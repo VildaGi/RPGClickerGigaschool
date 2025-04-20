@@ -9,6 +9,7 @@ namespace SceneManagement
     public class SceneLoader : MonoBehaviour
     {
         [SerializeField] private GameObject _loadingScreen;
+        private GameObject _Clouds;
 
         public void LoadMetaScene(SceneEnterParams enterParams = null)
         {
@@ -23,13 +24,12 @@ namespace SceneManagement
         private IEnumerator LoadAndStartMeta(SceneEnterParams enterParams)
         {
             _loadingScreen.SetActive(true);
-
+            
             yield return LoadScene(Scenes.Loader);
             yield return LoadScene(Scenes.MetaScene);
 
             var sceneEntryPoint = FindFirstObjectByType<EntryPoint>();
             sceneEntryPoint.Run(enterParams);
-            
             _loadingScreen.SetActive(false);
         }
         

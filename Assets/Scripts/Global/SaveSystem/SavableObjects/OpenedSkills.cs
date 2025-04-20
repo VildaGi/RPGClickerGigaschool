@@ -1,17 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Global.SaveSystem.SavableObjects
-{
+{ 
+    [Serializable]
     public class OpenedSkills : ISavable
-    {
-        public List<SkillWithLevel> Skills = new()
-        {
-            new()
-            {
-                Id = "AdditionalDamageSkill", 
-                Level = 1
-            }
-        };
+    { 
+        public List<SkillWithLevel> Skills = new();
 
         public SkillWithLevel GetSkillWithLevel(string skillId)
         {
@@ -23,7 +19,12 @@ namespace Global.SaveSystem.SavableObjects
                 }
             }
             
-            return null;
+            var newSkill = new SkillWithLevel() {
+                Id = skillId,
+                Level = 0
+            };
+            Skills.Add(newSkill);
+            return newSkill;
         }
     }
 }

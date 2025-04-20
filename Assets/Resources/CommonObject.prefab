@@ -278,7 +278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneLoader: {fileID: 8597115638107619611}
-  SaveSystem: {fileID: 0}
 --- !u!1 &6441617653324157012
 GameObject:
   m_ObjectHideFlags: 0

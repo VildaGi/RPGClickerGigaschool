@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using Game.Elements;
+using Game.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -45,6 +47,8 @@ namespace Game.Enemy
         public void DoDamage(float damage, ElementType attackElementType)
         {
             damage *= GetElementalDamageFactor(attackElementType, _enemyElementType);
+            
+            
             if (damage >= _health)
             {
                 _health = 0;

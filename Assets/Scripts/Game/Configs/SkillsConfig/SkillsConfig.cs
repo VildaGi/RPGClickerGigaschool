@@ -14,13 +14,13 @@ namespace Game.Configs.SkillsConfig
         {
             if (_skillDataByLevelMap == null || _skillDataByLevelMap.Count == 0)
             {
-                FillSkillDataMao();
+                FillSkillDataMap();
             }
             
             return _skillDataByLevelMap[skillId][level];
         }
 
-        private void FillSkillDataMao()
+        private void FillSkillDataMap()
         {
             _skillDataByLevelMap = new();
             foreach (var skillData in Skills)

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Extensions;
+using Game.Extensions;
 using UnityEngine;
 using UnityEngine.Serialization;
 

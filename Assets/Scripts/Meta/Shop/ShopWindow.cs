@@ -2,6 +2,7 @@
 using System.Linq;
 using Game.Configs;
 using Game.Configs.SkillsConfig;
+using Game.WalletWindow;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace Meta.Shop
         
         [SerializeField] private List<ShopItem> _items;
         [SerializeField] private ShopConfig _config;
+        [SerializeField] private WalletWindow _walletWindow;
         
         private Dictionary<string, ShopItem> _itemsMap;
         private int _currentPage = 0;
@@ -32,6 +34,7 @@ namespace Meta.Shop
             _openedSkills = (OpenedSkills)saveSystem.GetData(SavableObjectType.OpenedSkills);
             _wallet = (Wallet)saveSystem.GetData(SavableObjectType.Wallet);;
             _skillsConfig = skillsConfig;
+            _walletWindow.Initialize((Wallet)saveSystem.GetData(SavableObjectType.Wallet));
             
             InitializeItemMap();
             ShowShopItems();
@@ -50,12 +53,13 @@ namespace Meta.Shop
                 
                 _itemsMap[skillData.SkillId].Initialize(
                     skillId => SkillUpgrade(skillId, skillDataByLevel.Cost), 
-                    skillData.SkillId, 
-                    "", 
+                    skillData.SkillName, 
+                    skillData.SkillDiscription, 
                     skillDataByLevel.Cost,
                     _config.ShopItemSprite,
                     _config.BuyButtonSprite,
                     _wallet.Coins >= skillDataByLevel.Cost,
+                    skillDataByLevel.Level,
                     skillData.IsMaxLevel(skillWithLevel.Level));    
             }
         }
@@ -75,6 +79,7 @@ namespace Meta.Shop
             
             _saveSystem.SaveData(SavableObjectType.Wallet);
             _saveSystem.SaveData(SavableObjectType.OpenedSkills);
+            _walletWindow.UpdateCoins(_wallet.Coins);
             ShowShopItems();
 
         }
@@ -82,6 +87,8 @@ namespace Meta.Shop
         public void InitializePageSwitching()
         {
             _previousButton.onClick.AddListener(() => ShowPage(_currentPage - 1));
+            _previousButton.image.sprite = _config._prevButtonImage;
+            _nextButton.image.sprite = _config._nextButtonImage;
             _nextButton.onClick.AddListener(() => ShowPage(_currentPage + 1));
             ShowPage(_currentPage);
         }

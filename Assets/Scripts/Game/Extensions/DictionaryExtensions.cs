@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Extensions
+namespace Game.Extensions
 {
     public static class DictionaryExtensions
     {

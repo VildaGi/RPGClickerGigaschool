@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Game.Elements;
 
 namespace Game.Skills.Data
 {
@@ -8,6 +9,8 @@ namespace Game.Skills.Data
     public struct SkillData
     {
         public string SkillId;
+        public string SkillName;
+        public string SkillDiscription;
         public List<SkillDataByLevel> SkillLevels;
 
         public SkillDataByLevel GetSkillByLevel(int level)

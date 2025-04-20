@@ -8,6 +8,7 @@ namespace Game.ClickButtons
     {
         [SerializeField] private Button _button;
         [SerializeField] private Image _image;
+        
         private Sprite _changeableSprite;
 
         public void Initialize(Sprite sprite, Sprite changeableSprite, ColorBlock colorBlock)

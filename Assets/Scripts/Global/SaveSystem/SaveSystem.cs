@@ -11,11 +11,11 @@ namespace Global.SaveSystem
             _savableObjects = new() {
                 { SavableObjectType.Wallet, new Wallet() },
                 { SavableObjectType.Progress, new Progress() },
-                { SavableObjectType.OpenedSkills, new OpenedSkills() },
+                { SavableObjectType.OpenedSkills, new OpenedSkills() }, 
             };
-
             LoadData();
         }
+        
 
         private void LoadData() {
             foreach (var (key, savableObject) in _savableObjects) {

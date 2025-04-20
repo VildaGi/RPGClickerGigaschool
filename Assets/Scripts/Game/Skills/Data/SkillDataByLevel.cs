@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Elements;
 
 namespace Game.Skills.Data
 {
@@ -6,6 +7,7 @@ namespace Game.Skills.Data
     public struct SkillDataByLevel
     {
         public int Level;
+        public ElementType ElementType;
         public float Value;
         public SkillTrigger Trigger;
         public float TriggerValue;

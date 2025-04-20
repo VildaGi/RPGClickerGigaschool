@@ -14,5 +14,10 @@ namespace Game.WalletWindow
         {
             _textMeshPro.text = wallet.Coins.ToString();
         }
+
+        public void UpdateCoins(int coins)
+        {
+            _textMeshPro.text = coins.ToString();
+        }
     }
 }

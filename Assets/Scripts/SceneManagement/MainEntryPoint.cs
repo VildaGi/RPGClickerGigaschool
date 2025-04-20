@@ -7,7 +7,7 @@ namespace SceneManagement
     public class MainEntryPoint : MonoBehaviour
     {
         private const string COMMON_OBJECT_TAG = "CommonObject";
-
+        
         public void Awake()
         {
             if (GameObject.FindGameObjectWithTag(COMMON_OBJECT_TAG)) return;
@@ -17,8 +17,8 @@ namespace SceneManagement
             DontDestroyOnLoad(commonObject);
             
             commonObject.SaveSystem = new();
-
+            
             commonObject.SceneLoader.LoadMetaScene();
         }
     }
-}
+}   

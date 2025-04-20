@@ -11,13 +11,16 @@ namespace Game.Timer
         private float _maxTime;
         private float _currentTime;
         private bool _isPlaying;
+        private int _counter = 0;
         public event UnityAction OnTimerEnd;
-
+        public event UnityAction OnCounterUpdate;
+        
         public bool IsPlaying => _isPlaying;
         public void SetValue(float maxTime)
         {
             _maxTime = maxTime;
             _currentTime = maxTime;
+            _counter = 0;
             Play();
         }
     
@@ -52,7 +55,14 @@ namespace Game.Timer
                 Stop();
                 return;
             }
-        
+
+            _counter++;
+            if (_counter == 100)
+            {
+                _counter = 0;
+                OnCounterUpdate?.Invoke();
+            }
+            
             _currentTime -= deltaTime;
             _timerText.text = _currentTime.ToString("00.00");
         }

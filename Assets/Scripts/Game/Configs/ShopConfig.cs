@@ -9,5 +9,8 @@ namespace Game.Configs
         public Sprite ShopItemSprite;
         public Sprite BuyButtonSprite;
         public Sprite CoinSprite;
+        
+        public Sprite _prevButtonImage;
+        public Sprite _nextButtonImage;
     }
 }

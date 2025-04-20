@@ -11,6 +11,7 @@ namespace Meta.Shop
         [SerializeField] private TextMeshProUGUI _label;
         [SerializeField] private TextMeshProUGUI _description;
         [SerializeField] private TextMeshProUGUI _cost;
+        [SerializeField] private TextMeshProUGUI _level;
         [SerializeField] private Button _button;
         [SerializeField] private Image _itemBorder;
         [SerializeField] private Image _buyButton;
@@ -23,13 +24,19 @@ namespace Meta.Shop
             Sprite borderSprite,
             Sprite buyButtonSprite,
             bool isEnough, 
+            int level,
             bool isMaxLevel)
         {
+            _button.onClick.RemoveAllListeners();
             _button.onClick.AddListener(() => onClick?.Invoke(SkillId));
             _label.text = label;
+            _label.color = Color.black;
             _description.text = description;
+            _description.color = Color.black;
             _itemBorder.sprite = borderSprite;
             _buyButton.sprite = buyButtonSprite;
+            _level.text = level + " Lvl";
+            _level.fontSize = 75;
             
             if (isMaxLevel)
             {

@@ -14,13 +14,14 @@ namespace Game.Skills
         private Dictionary<SkillTrigger, List<Skill>> _skillByTrigger;
         
         
-        public SkillSystem(OpenedSkills openedSkills, SkillsConfig skillsConfig, EnemyManager enemyManager)
+        public SkillSystem(OpenedSkills openedSkills, SkillsConfig skillsConfig, EnemyManager enemyManager, StatusManager.StatusManager statusManager)
         {
             _skillsConfig = skillsConfig;
             _skillByTrigger = new();
             _scope = new()
             {
-                EnemyManager = enemyManager
+                EnemyManager = enemyManager,
+                StatusManager = statusManager
             };
             
             foreach (var skill in openedSkills.Skills)

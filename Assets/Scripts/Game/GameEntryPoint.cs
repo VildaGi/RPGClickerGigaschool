@@ -11,6 +11,7 @@ using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
@@ -22,12 +23,15 @@ namespace Game
         [SerializeField] private ClickButtonManager _clickButtonManager;
         [SerializeField] private MenuButtonManager _menuButtonManager;
         [SerializeField] private EnemyManager _enemyManager;
+        [SerializeField] private StatusManager.StatusManager _statusManager;
         [SerializeField] private Image _levelBackground;
         [SerializeField] private EndLevelWindow _endLevelWindow;
         [SerializeField] private Timer.Timer _timer;
         [SerializeField] private WalletWindow.WalletWindow _walletWindow;
         [SerializeField] private HealthBar.HealthBar _healthBar;
 
+        
+        
         [SerializeField] private LevelsConfig _levelsConfig;
         [SerializeField] private SkillsConfig _SkillsConfig;
 
@@ -60,29 +64,37 @@ namespace Game
             _walletWindow.Initialize((Wallet)_saveSystem.GetData(SavableObjectType.Wallet));
 
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
-            _skillSystem = new SkillSystem(openedSkills, _SkillsConfig, _enemyManager);
+            _skillSystem = new SkillSystem(openedSkills, _SkillsConfig, _enemyManager, _statusManager);
             _endLevelSystem = new(_endLevelWindow, _saveSystem, _gameEnterParams, _levelsConfig);
             
             
             // после инитиализации делаем нужные подписки.
             _clickButtonManager.OnClicked += () =>
             {
-                //_enemyManager.DamageCurrentEnemy(1f);
+                _enemyManager.DamageCurrentEnemy();
                 _skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
             };
+            
+            // делаем подписки на кнопки и экшены с нажатий
             _clickButtonManager.OnFireClicked += () => _enemyManager.ChangeElementType(ElementType.Fire);
             _clickButtonManager.OnAirClicked += () => _enemyManager.ChangeElementType(ElementType.Air);
             _clickButtonManager.OnRockClicked += () => _enemyManager.ChangeElementType(ElementType.Rock);
             _clickButtonManager.OnWaterClicked += () => _enemyManager.ChangeElementType(ElementType.Water);
+            _clickButtonManager.FireActive += () => _skillSystem.InvokeTrigger(SkillTrigger.FireActive);
+            _clickButtonManager.AirActive += () => _skillSystem.InvokeTrigger(SkillTrigger.AirActive);
+            _clickButtonManager.WaterActive += () => _skillSystem.InvokeTrigger(SkillTrigger.WaterActive);
+            _clickButtonManager.RockActive += () => _skillSystem.InvokeTrigger(SkillTrigger.RockActive);
             
-            // из пустого метода мы должны выполнить метод и передать 1f.
             _endLevelWindow.OnNextClicked += NextLevel;
             _endLevelWindow.OnRestartClicked += RestartLevel;
             
-            
-            
             _menuButtonManager.OnMapClicked += OpenMap;
+            
             _enemyManager.OnLevelPassed += _endLevelSystem.LevelPassed;
+            _enemyManager.AddCoins += _endLevelSystem.AddReward;
+            _enemyManager.AddCoins += (int x) => _walletWindow.UpdateCoins(((Wallet)_saveSystem.GetData(SavableObjectType.Wallet)).Coins);
+            _enemyManager.OnTimerUpdate += () => _skillSystem.InvokeTrigger(SkillTrigger.OnTime);
+            _enemyManager.OnKillEnemy += () => _skillSystem.InvokeTrigger(SkillTrigger.OnKill);
 
             StartLevel();
         }
@@ -110,11 +122,11 @@ namespace Game
             }
             
             var levelData = _levelsConfig.GetLevel(location, level);
-            Debug.Log($"{_gameEnterParams.Location} {_gameEnterParams.Level}");
             
             // выбор случайного уровня из возможных
             _levelBackground.sprite = levelData.LevelBackgrounds[new Random().Next(0, levelData.LevelBackgrounds.Count)];
-            _enemyManager.StartLevel(levelData);
+            _enemyManager.StartLevel(levelData);    
+            _skillSystem.InvokeTrigger(SkillTrigger.OnStart);
         }
         private void NextLevel()
         {

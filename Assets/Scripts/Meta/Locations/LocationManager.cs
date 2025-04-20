@@ -24,6 +24,12 @@ namespace Meta.Locations
             _walletWindow.Initialize(wallet);
             InitializeMoveLocationButtons();
         }
+
+        public void SetActive(int coins)
+        {
+            gameObject.SetActive(true);
+            _walletWindow.UpdateCoins(coins);
+        }
         private void InitializeMoveLocationButtons()
         {
             _previousButton.onClick.AddListener(ShowPreviousLocation);

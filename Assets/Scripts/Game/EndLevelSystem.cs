@@ -37,6 +37,12 @@ namespace Game
             }
         }
 
+        public void AddReward(int reward)
+        {
+            TrySaveWallet(reward);
+            
+        }
+
         private void TrySaveWallet(int reward)
         {
             var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
