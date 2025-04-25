@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = System.Random;
 
-namespace Game.EndLevel
+namespace Game.EndLevelSystem.EndLevel
 {
     public class LoseWindow : MonoBehaviour
     {

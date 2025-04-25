@@ -5,6 +5,7 @@ using Game.Elements;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 namespace Game.Enemy
 {
     public class EnemyManager : MonoBehaviour
@@ -20,15 +21,15 @@ namespace Game.Enemy
         [SerializeField] private StatusManager.StatusManager _statusManager;
         
         private Enemy _currentEnemyMonoBehaviour;
-        private float _currentPlayerDamage;
-        
+        private int _currentEnemyIndex;
+
         private Timer.Timer _timer;
         private HealthBar.HealthBar _healthBar;
         private LevelData _levelData;
-        private int _currentEnemyIndex;
+        
         private ElementType _attackElement;
-        
-        
+        private float _currentPlayerDamage;
+
 
         public event UnityAction<bool, int> OnLevelPassed;
         public event UnityAction OnKillEnemy;
@@ -39,7 +40,7 @@ namespace Game.Enemy
         {
             _timer = timer;
             _healthBar = healthBar;
-            _statusManager.OnDoTTrigger += DamageCurrentEnemy;
+            _statusManager.OnDoTTrigger += DamageCurrentEnemyWithDOT;
         }
 
         private void SpawnEnemy()
@@ -58,7 +59,6 @@ namespace Game.Enemy
             
             
             var currentEnemy = _levelData.Enemies[_currentEnemyIndex];
-            _currentPlayerDamage = 1;
             
             
             
@@ -123,10 +123,27 @@ namespace Game.Enemy
             _currentEnemyMonoBehaviour.DoDamage(damage, _attackElement);
         }
         
+        public void DamageCurrentEnemyWithDOT((float, float, float, float) damage)
+        {
+            var fireDamage = damage.Item2 * _statusManager.GetStatusesMultiplier();
+            var AirDamage = damage.Item1 * _statusManager.GetStatusesMultiplier();
+            var RockDamage = damage.Item3 * _statusManager.GetStatusesMultiplier();
+            var WaterDamage = damage.Item4 * _statusManager.GetStatusesMultiplier();
+
+            if (fireDamage > 1) _currentEnemyMonoBehaviour.DoDamage(fireDamage, ElementType.Fire);
+            if (AirDamage > 1) _currentEnemyMonoBehaviour.DoDamage(AirDamage, ElementType.Air);
+            if (RockDamage > 1) _currentEnemyMonoBehaviour.DoDamage(RockDamage, ElementType.Rock);
+            if (WaterDamage > 1) _currentEnemyMonoBehaviour.DoDamage(WaterDamage, ElementType.Water);
+        }
         public void DamageCurrentEnemy(float damage)
         {
             var relevantDamage = damage * _statusManager.GetStatusesMultiplier();
             _currentEnemyMonoBehaviour.DoDamage(relevantDamage, _attackElement);
+        }
+        public void DamageCurrentEnemy(ElementType element)
+        {
+            var damage = _currentPlayerDamage * _statusManager.GetStatusesMultiplier();
+            _currentEnemyMonoBehaviour.DoDamage(damage, element);
         }
         
         public void DamageCurrentEnemy(float damage, ElementType element)

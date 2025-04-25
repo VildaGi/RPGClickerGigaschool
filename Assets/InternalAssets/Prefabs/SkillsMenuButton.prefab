@@ -133,6 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3eb10ad65ce4cc1aabc3ebc59672d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedImage: {fileID: -678613385896978371, guid: 00aef922d3a0d5047a9a42fb98515909, type: 3}
   _image: {fileID: 477440811709784107}
   _button: {fileID: 8647147980668275633}

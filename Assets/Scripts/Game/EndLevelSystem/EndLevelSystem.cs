@@ -1,10 +1,10 @@
 ﻿using Game.Configs.LevelConfigs;
-using Game.EndLevel;
+using Game.EndLevelSystem.EndLevel;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
 
-namespace Game
+namespace Game.EndLevelSystem
 {
     public class EndLevelSystem
     {

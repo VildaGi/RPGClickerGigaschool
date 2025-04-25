@@ -1,4 +1,5 @@
-﻿using Game.Enemy;
+﻿using Game.Elements;
+using Game.Enemy;
 using Game.Skills.Data;
 using Game.StatusManager;
 using UnityEngine.Scripting;
@@ -24,7 +25,7 @@ namespace Game.Skills.SkillVariants
         {
             for (int i = 0; i < _skillData.Value; i++)
             {
-                _enemyManager.DamageCurrentEnemy();
+                _enemyManager.DamageCurrentEnemy(ElementType.Air);
             }
         }
     }

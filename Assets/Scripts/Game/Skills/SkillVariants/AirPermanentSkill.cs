@@ -1,4 +1,5 @@
-﻿using Game.Enemy;
+﻿using Game.Elements;
+using Game.Enemy;
 using Game.Skills.Data;
 using Game.StatusManager;
 using UnityEngine.Scripting;
@@ -29,6 +30,7 @@ namespace Game.Skills.SkillVariants
                 {
                     StatusName = "Air Permanent",
                     statusType = StatusType.Multiplier,
+                    StatusElementType = ElementType.Air,
                     StatusValue = _skillData.Value,
                     Time = _skillData.Level * 3,
                 });

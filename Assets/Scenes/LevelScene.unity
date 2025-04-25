@@ -448,10 +448,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1279193200799814341, guid: d5c8b86849fda8241aa67182d4febbca, type: 3}
-      propertyPath: m_text
-      value: Good job, my friend!
-      objectReference: {fileID: 0}
     - target: {fileID: 2551820715436023274, guid: d5c8b86849fda8241aa67182d4febbca, type: 3}
       propertyPath: m_Name
       value: EndGameWindow

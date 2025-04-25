@@ -12,6 +12,7 @@ namespace Meta
     public class MetaEntryPoint : EntryPoint
     {
         [SerializeField] private LocationManager _locationManager;
+        [SerializeField] private LoopWindow.LoopWindow _loopWindow;
         [SerializeField] private ShopWindow _shopWindow;
         [SerializeField] private SkillsConfig _skillsConfig;
         [SerializeField] private MetaMenuButtonManager _metaMenuButtonManagerOnMap;
@@ -31,18 +32,22 @@ namespace Meta
             
             var progress = (Progress) _saveSystem.GetData(SavableObjectType.Progress);   
             var wallet = (Wallet) _saveSystem.GetData(SavableObjectType.Wallet);
+            
             _locationManager.Initialize(progress, wallet, StartLevel);
             _shopWindow.Initialize(_saveSystem, _skillsConfig);
             _metaMenuButtonManagerOnMap.Initialize();
             _metaMenuButtonManagerOnShop.Initialize();
-
+            _loopWindow.Initialize(_saveSystem);
 
             _metaMenuButtonManagerOnMap.OnMapClicked += OpenMapWindow;
             _metaMenuButtonManagerOnShop.OnMapClicked += OpenMapWindow;
             _metaMenuButtonManagerOnMap.OnShopClicked += OpenShopWindow;
             _metaMenuButtonManagerOnShop.OnShopClicked += OpenShopWindow;
-        }
 
+            _loopWindow.OnLoopClicked += StartLoop;
+            
+        }
+    
         private void StartLevel(int location, int level)
         {
             _sceneLoader.LoadGameplayScene(new GameEnterParams(location, level));
@@ -57,7 +62,24 @@ namespace Meta
         private void OpenMapWindow()
         {
             _shopWindow.gameObject.SetActive(false);
-            _locationManager.SetActive(((Wallet) _saveSystem.GetData(SavableObjectType.Wallet)).Coins);
+            _locationManager.SetActiveAndUpdateWallet(((Wallet) _saveSystem.GetData(SavableObjectType.Wallet)).Coins);
+        }
+
+        private void StartLoop()
+        {
+            var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
+            progress.CurrentLoop++;
+            progress.CurrentLevel = 1;
+            progress.CurrentLocation = 1;
+
+
+            _saveSystem.SaveAll();
+            _locationManager.Initialize(progress, wallet, StartLevel);
+
+
+            Debug.Log("NextLoop");
+            Debug.Log(_saveSystem.GetData(SavableObjectType.Progress));
         }
     }
 }

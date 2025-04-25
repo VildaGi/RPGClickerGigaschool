@@ -27,6 +27,7 @@ namespace Game.Skills.SkillVariants
             {
                 StatusName = "Fire Active",
                 statusType = StatusType.DoT,
+                StatusElementType = ElementType.Fire,
                 StatusValue = _skillData.Value/10,
                 Time = _skillData.Level * 3,
             });

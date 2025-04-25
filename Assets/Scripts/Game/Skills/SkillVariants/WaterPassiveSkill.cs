@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Elements;
 using Game.Enemy;
 using Game.Skills.Data;
 using UnityEngine.Scripting;
@@ -23,7 +24,7 @@ namespace Game.Skills.SkillVariants
             var rnd = new Random();
             if (rnd.Next(0, 100) < 7 * _skillData.Level)
             {
-                _enemyManager.DamageCurrentEnemy(_skillData.Value);
+                _enemyManager.DamageCurrentEnemy(_skillData.Value, ElementType.Water);
             }
         }
     }

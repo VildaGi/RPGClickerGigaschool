@@ -47,7 +47,7 @@ namespace Game.Enemy
         public void DoDamage(float damage, ElementType attackElementType)
         {
             damage *= GetElementalDamageFactor(attackElementType, _enemyElementType);
-            
+            DamageUI.DamageUI.Instance.AddText(damage, attackElementType);
             
             if (damage >= _health)
             {
@@ -59,7 +59,6 @@ namespace Game.Enemy
             _health -= damage;
             _currentSequenceDamage.Restart();
             OnDamaged?.Invoke(damage);
-        
         }
 
         public float GetElementalDamageFactor(ElementType attackType, ElementType enemyType)

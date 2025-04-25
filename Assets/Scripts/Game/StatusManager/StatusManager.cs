@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Game.Elements;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,7 +11,7 @@ namespace Game.StatusManager
         private List<StatusData>  _statuses = new List<StatusData>();
         private int _ticksCounter = 0;
 
-        public event UnityAction<float> OnDoTTrigger;
+        public event UnityAction<(float, float, float, float)> OnDoTTrigger;
         
         private void FixedUpdate()
         {
@@ -25,11 +26,36 @@ namespace Game.StatusManager
             UpdateStatuses(deltaTime);
         }
 
-        private float GetDoTDamage()
+        private (float, float, float, float) GetDoTDamage()
         {
-            var damage = 0f;
-            foreach (var status in _statuses) if (status.statusType == StatusType.DoT) damage += status.StatusValue;
-            return damage;
+            var Airdamage = 0f;
+            var Firedamage = 0f;
+            var Rockdamage = 0f;
+            var Waterdamage = 0f;
+
+
+            foreach (var status in _statuses)
+            {
+                if (status.statusType == StatusType.DoT)
+                {
+                    switch (status.StatusElementType)
+                    {
+                        case ElementType.Air:
+                            Airdamage += status.StatusValue;
+                            break;
+                        case ElementType.Water:
+                            Waterdamage += status.StatusValue;
+                            break;
+                        case ElementType.Rock:
+                            Rockdamage += status.StatusValue;
+                            break;
+                        case ElementType.Fire:
+                            Firedamage += status.StatusValue;
+                            break;
+                    }
+                }
+            }
+            return (Airdamage, Firedamage, Rockdamage, Waterdamage);
         }
 
         private void UpdateStatuses(float deltaTime)

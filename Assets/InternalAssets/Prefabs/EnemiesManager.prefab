@@ -51,6 +51,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyContainer: {fileID: 5037456571882259174}
   _enemiesConfig: {fileID: 11400000, guid: 338792c17c4bf7241899f003674b5791, type: 2}
+  _healthBarPrefab: {fileID: 0}
+  _waterSprite: {fileID: 0}
+  _airSprite: {fileID: 0}
+  _fireSprite: {fileID: 0}
+  _rockSprite: {fileID: 0}
+  _statusManager: {fileID: 0}
 --- !u!1 &5579960559895857497
 GameObject:
   m_ObjectHideFlags: 0

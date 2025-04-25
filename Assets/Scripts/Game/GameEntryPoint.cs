@@ -3,7 +3,7 @@ using Game.ClickButtons;
 using Game.Configs.LevelConfigs;
 using Game.Configs.SkillsConfig;
 using Game.Elements;
-using Game.EndLevel;
+using Game.EndLevelSystem.EndLevel;
 using Game.Enemy;
 using Game.MenuManager;
 using Game.Skills;
@@ -38,7 +38,7 @@ namespace Game
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
         private SkillSystem _skillSystem;
-        private EndLevelSystem _endLevelSystem;
+        private EndLevelSystem.EndLevelSystem _endLevelSystem;
         private SceneLoader _sceneLoader;
         private const string COMMON_OBJECT_TAG = "CommonObject";
     

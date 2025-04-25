@@ -123,7 +123,7 @@ PrefabInstance:
     - target: {fileID: 1651689170021476742, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 19cd2134a058142429aeb17c95c0e0f3, type: 2}
     - target: {fileID: 1651689170021476742, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_isOrthographic
       value: 1
@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 1651689170021476742, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 5702715970865487967, guid: 19cd2134a058142429aeb17c95c0e0f3, type: 2}
     - target: {fileID: 1651689170021476742, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
@@ -139,6 +139,10 @@ PrefabInstance:
     - target: {fileID: 1651689170021476742, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_ActiveFontFeatures.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532604628400209540, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
+      propertyPath: SkillId
+      value: RockPassiveSkill
       objectReference: {fileID: 0}
     - target: {fileID: 2569801368840184660, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -157,25 +161,13 @@ PrefabInstance:
       value: 187
       objectReference: {fileID: 0}
     - target: {fileID: 2742600063626352853, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _level
-      value: 
-      objectReference: {fileID: 3043290442503545242}
-    - target: {fileID: 2742600063626352853, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: SkillId
       value: RockActiveSkill
       objectReference: {fileID: 0}
-    - target: {fileID: 2742600063626352853, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _buyButton
-      value: 
-      objectReference: {fileID: 8097145932102240533}
-    - target: {fileID: 2742600063626352853, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _itemBorder
-      value: 
-      objectReference: {fileID: 8888591096340867614}
     - target: {fileID: 3882291657830757681, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 19cd2134a058142429aeb17c95c0e0f3, type: 2}
     - target: {fileID: 3882291657830757681, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_isOrthographic
       value: 1
@@ -183,7 +175,7 @@ PrefabInstance:
     - target: {fileID: 3882291657830757681, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 5702715970865487967, guid: 19cd2134a058142429aeb17c95c0e0f3, type: 2}
     - target: {fileID: 3882291657830757681, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
@@ -230,12 +222,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5390063302513482961, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5552495274054405091, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 19cd2134a058142429aeb17c95c0e0f3, type: 2}
     - target: {fileID: 5552495274054405091, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_isOrthographic
       value: 1
@@ -243,7 +235,7 @@ PrefabInstance:
     - target: {fileID: 5552495274054405091, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 5702715970865487967, guid: 19cd2134a058142429aeb17c95c0e0f3, type: 2}
     - target: {fileID: 5552495274054405091, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
@@ -252,22 +244,14 @@ PrefabInstance:
       propertyPath: m_ActiveFontFeatures.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7926785154494058757, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _level
-      value: 
-      objectReference: {fileID: 967874966929341445}
+    - target: {fileID: 6282518556327348535, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
+      propertyPath: SkillId
+      value: RockPermanentSkill
+      objectReference: {fileID: 0}
     - target: {fileID: 7926785154494058757, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: SkillId
       value: RockPassiveSkill
       objectReference: {fileID: 0}
-    - target: {fileID: 7926785154494058757, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _buyButton
-      value: 
-      objectReference: {fileID: 5473676953380084265}
-    - target: {fileID: 7926785154494058757, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _itemBorder
-      value: 
-      objectReference: {fileID: 3481816360710263711}
     - target: {fileID: 8376028890969762440, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: m_SizeDelta.x
       value: 732.5282
@@ -288,123 +272,19 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u041A\u0430\u043C\u0435\u043D\u044C"
       objectReference: {fileID: 0}
-    - target: {fileID: 8625346253668592962, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _level
-      value: 
-      objectReference: {fileID: 3183050766574651835}
+    - target: {fileID: 8623495116874265694, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
+      propertyPath: SkillId
+      value: RockActiveSkill
+      objectReference: {fileID: 0}
     - target: {fileID: 8625346253668592962, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
       propertyPath: SkillId
       value: RockPermanentSkill
       objectReference: {fileID: 0}
-    - target: {fileID: 8625346253668592962, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _buyButton
-      value: 
-      objectReference: {fileID: 2802196492077126621}
-    - target: {fileID: 8625346253668592962, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-      propertyPath: _itemBorder
-      value: 
-      objectReference: {fileID: 7092195489792111297}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7322971206016060395, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
+    - {fileID: 1096463524399348052, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
+    - {fileID: 3163534686905063756, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
---- !u!114 &967874966929341445 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1878012129466013118, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2802196492077126621 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3575288486367394406, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3043290442503545242 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4415057862676531233, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3183050766574651835 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4274735172367491072, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3481816360710263711 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2823610435954407972, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5473676953380084265 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6667850842039972754, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7092195489792111297 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8435828191906306938, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8097145932102240533 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7431018963440935086, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8888591096340867614 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7792355116077171621, guid: 40521e2a647dd3b43b0d91d8094368e1, type: 3}
-  m_PrefabInstance: {fileID: 1692965552980666811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

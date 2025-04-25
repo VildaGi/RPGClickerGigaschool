@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Game.EndLevel
+namespace Game.EndLevelSystem.EndLevel
 {
     public class EndLevelWindow : MonoBehaviour
     {

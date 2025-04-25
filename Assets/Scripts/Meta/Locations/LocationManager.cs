@@ -23,9 +23,10 @@ namespace Meta.Locations
             InitLocation(progress, startLevelCallback);
             _walletWindow.Initialize(wallet);
             InitializeMoveLocationButtons();
+            
         }
 
-        public void SetActive(int coins)
+        public void SetActiveAndUpdateWallet(int coins)
         {
             gameObject.SetActive(true);
             _walletWindow.UpdateCoins(coins);
@@ -38,10 +39,12 @@ namespace Meta.Locations
             if (_currentLocation == _locations.Count)
             {
                 _nextButton.gameObject.SetActive(false);
-            }
-
-            if (_currentLocation == 1)
+            }else if (_currentLocation == 1)
             {
+                _previousButton.gameObject.SetActive(false);
+            }else if (_currentLocation > _locations.Count)
+            {
+                _nextButton.gameObject.SetActive(false);
                 _previousButton.gameObject.SetActive(false);
             }
         }
