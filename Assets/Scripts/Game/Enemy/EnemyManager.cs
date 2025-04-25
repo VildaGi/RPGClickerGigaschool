@@ -2,6 +2,8 @@
 using Game.Configs;
 using Game.Configs.LevelConfigs;
 using Game.Elements;
+using Global.SaveSystem;
+using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -26,6 +28,7 @@ namespace Game.Enemy
         private Timer.Timer _timer;
         private HealthBar.HealthBar _healthBar;
         private LevelData _levelData;
+        private SaveSystem _saveSystem;
         
         private ElementType _attackElement;
         private float _currentPlayerDamage;
@@ -36,11 +39,12 @@ namespace Game.Enemy
         public event UnityAction OnTimerUpdate;
         public event UnityAction<int> AddCoins;
 
-        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer)
+        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer, SaveSystem saveSystem)
         {
             _timer = timer;
             _healthBar = healthBar;
             _statusManager.OnDoTTrigger += DamageCurrentEnemyWithDOT;
+            _saveSystem = saveSystem;
         }
 
         private void SpawnEnemy()
@@ -71,10 +75,24 @@ namespace Game.Enemy
                 _timer.OnCounterUpdate += () => OnTimerUpdate?.Invoke();
             }
             
-            InitHpBar(currentEnemy.Hp, currentEnemy.Element);
+            
+            var actualHP = CalculateActualHp(currentEnemy.Hp);
+            
+            InitHpBar(actualHP, currentEnemy.Element);
             
             var _currentEnemyViewData = _enemiesConfig.GetEnemy(currentEnemy.Id); // взяли инфу по врагу
-            _currentEnemyMonoBehaviour.Initialize(_currentEnemyViewData.Sprite, currentEnemy.Hp, currentEnemy.Element);
+            _currentEnemyMonoBehaviour.Initialize(_currentEnemyViewData.Sprite, actualHP, currentEnemy.Element);
+        }
+
+        private float CalculateActualHp(float currentEnemyHP)
+        {
+            var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+            int currentLevel = progress.CurrentLevel;
+            int currentLocation = progress.CurrentLocation;
+            int currentLoop = progress.CurrentLoop;
+            
+            float actualHP = currentEnemyHP + (150 * currentLocation) + (30 * currentLevel) + (500 * currentLoop);
+            return actualHP;
         }
 
         public void IncreasePlayerDamage(float additionalDamage)

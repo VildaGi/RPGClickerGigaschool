@@ -59,7 +59,7 @@ namespace Game
             
             _clickButtonManager.Initialize();
             _menuButtonManager.Initialize();
-            _enemyManager.Initialize(_healthBar, _timer);
+            _enemyManager.Initialize(_healthBar, _timer, _saveSystem);
             _endLevelWindow.Initialize();
             _walletWindow.Initialize((Wallet)_saveSystem.GetData(SavableObjectType.Wallet));
 

@@ -3273,38 +3273,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 704157356}
     m_Modifications:
-    - target: {fileID: 1748984491420560486, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 139.2512
-      objectReference: {fileID: 0}
-    - target: {fileID: 1748984491420560486, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 117.4168
-      objectReference: {fileID: 0}
-    - target: {fileID: 1748984491420560486, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -262
-      objectReference: {fileID: 0}
-    - target: {fileID: 1748984491420560486, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1143.3065
-      objectReference: {fileID: 0}
-    - target: {fileID: 5792112548774938946, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 137.7157
-      objectReference: {fileID: 0}
-    - target: {fileID: 5792112548774938946, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 118.9423
-      objectReference: {fileID: 0}
-    - target: {fileID: 5792112548774938946, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -493
-      objectReference: {fileID: 0}
-    - target: {fileID: 5792112548774938946, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1134.8611
-      objectReference: {fileID: 0}
     - target: {fileID: 6346795482932334237, guid: 25837a6cceba1a54e9d8f71883b48d44, type: 3}
       propertyPath: m_Name
       value: Menubar
